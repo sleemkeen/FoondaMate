@@ -1,9 +1,8 @@
 # FoondaMate Tests
 
-- How to Run
-
-- npm i
-- npm run analysis
+-How to Run
+  npm i
+  npm run analysis
 
 -To Run Test
--npm run test
+  npm run test
