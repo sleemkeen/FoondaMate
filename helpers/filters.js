@@ -16,6 +16,7 @@ exports.filterData = async (startDate, endDate, items) => {
       let hitDates = new Date(singleDate);
       return hitDates >= new Date(startDate) && hitDates <= new Date(endDate);
     });
+
     return resultMetricData;
   }
   return false;

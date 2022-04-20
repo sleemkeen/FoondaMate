@@ -23,8 +23,16 @@ exports.graph = async (options) => {
       console.log("Invalid date format");
       return;
     }
-    keys = Object.keys(filters);
-    values = Object.values(items);
+
+    keys = [];
+    values = [];
+
+    filters.map((items) => {
+      return keys.push(items.key);
+    });
+    filters.map((items) => {
+      return values.push(items.value);
+    });
   }
 
   let graphStructure = [];
