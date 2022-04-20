@@ -1,5 +1,4 @@
 const axios = require("axios");
-const moment = require("moment");
 const { isValidDate } = require("../util/validate");
 
 exports.filterData = async (startDate, endDate, items) => {
