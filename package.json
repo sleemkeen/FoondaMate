@@ -18,7 +18,8 @@
     "cli-barchart": "^0.2.3",
     "cli-graph": "^3.2.2",
     "commander": "^9.2.0",
-    "conf": "^10.1.2"
+    "conf": "^10.1.2",
+    "moment": "^2.29.3"
   },
   "devDependencies": {
     "mocha": "^9.2.2"

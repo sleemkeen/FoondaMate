@@ -3,12 +3,30 @@ const { fetchGraph } = require("./graphService");
 var babar = require("babar");
 const bar = require("cli-barchart");
 const chalk = require("chalk");
+const { filterData } = require("../helpers/filters");
 
-exports.graph = async () => {
+exports.graph = async (options) => {
+  const { startDate, endDate } = options;
+
   //   Add points
   let items = await fetchGraph();
-  let keys = Object.keys(items);
-  let values = Object.values(items);
+  let keys;
+  let values;
+
+  keys = Object.keys(items);
+  values = Object.values(items);
+
+  //Filter HERE
+  if (startDate && endDate) {
+    let filters = await filterData(startDate, endDate, items);
+    if (!filters) {
+      console.log("Invalid date format");
+      return;
+    }
+    keys = Object.keys(filters);
+    values = Object.values(items);
+  }
+
   let graphStructure = [];
   let graphStructureWithObject = [];
 
